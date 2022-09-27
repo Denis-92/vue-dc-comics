@@ -1,10 +1,20 @@
 <template>
-    <div>FOOTER</div>
+    <div>
+        <footerLinks />
+        <footerSocials />
+    </div>
 </template>
 
 <script>
+import footerSocials from './footer/footerSocials.vue';
+import footerLinks from './footer/footerLinks.vue';
+
 export default {
-    name: "pageFooter"
+    name: "pageFooter",
+    components: {
+        footerSocials,
+        footerLinks,
+    }
 }
 </script>
 

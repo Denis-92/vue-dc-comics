@@ -28,6 +28,9 @@ export default {
 
 .section-container {
   max-width: 1200px;
+}
+
+.margin-section {
   margin: 0 auto;
 }
 </style>
