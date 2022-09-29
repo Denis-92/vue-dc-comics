@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <pageHeaderVue />
-    <pageMainVue />
+    <div id="jumbotron">
+      <img src="@/assets/img/jumbotron.jpg" alt="Jumbotron">
+      <div id="current-series">CURRENT SERIES</div>
+    </div>
+    <pageMainVue :cards="comics" />
     <pageFooterVue />
   </div>
 </template>
@@ -11,6 +15,8 @@
 import pageHeaderVue from './components/pageHeader.vue';
 import pageMainVue from './components/pageMain.vue';
 import pageFooterVue from './components/pageFooter.vue';
+// import { comics } from '@/assets/data/dc-comics.js'
+import comics from '@/assets/data/dc-comics.json'
 
 export default {
   name: 'App',
@@ -18,6 +24,9 @@ export default {
     pageHeaderVue,
     pageMainVue,
     pageFooterVue,
+  },
+  data() {
+    return { comics }
   }
 }
 </script>
@@ -38,5 +47,23 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100vh;
+}
+
+#jumbotron {
+  height: 350px;
+
+  img {
+    width: 100%;
+  }
+}
+
+#current-series {
+  color: white;
+  background-color: lightseagreen;
+  position: absolute;
+  padding: 5px 25px;
+  font-size: 1.5rem;
+  top: 61%;
+  left: .6%;
 }
 </style>

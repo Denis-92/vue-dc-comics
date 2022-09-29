@@ -1,7 +1,14 @@
 <template>
     <div>
-        <div class="section-block">
-            <p>-- Content goes here --</p>
+        <div id="card-container">
+            <div class="section-block">
+                <div v-for="card in cards" :key="card.series">
+                    <mainCards :card="card" />
+                </div>
+            </div>
+            <div id="load-more">
+                LOAD MORE
+            </div>
         </div>
         <div class="shop-section">
             <div>
@@ -29,23 +36,30 @@
 </template>
 
 <script>
+import mainCards from "./mainCards.vue"
+
 export default {
-    name: "pageMain"
+    name: "pageMain",
+    props: {
+        cards: Array,
+    },
+    mounted() {
+        console.log(this.cards);
+    },
+    components: {
+        mainCards,
+    },
 }
 </script>
 
 <style lang="scss" scoped>
 .section-block {
-    height: 100px;
-    width: 100%;
-    background-color: black;
-    color: white;
     display: flex;
     align-items: center;
-    font-size: 2rem;
+    flex-wrap: wrap;
 
-    p {
-        margin-left: 20%;
+    >div {
+        width: calc(100% / 6);
     }
 }
 
@@ -68,5 +82,21 @@ export default {
             padding: 0 10px;
         }
     }
+}
+
+#card-container {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#load-more {
+    background-color: blue;
+    padding: 5px 25px;
+    margin-bottom: 20px;
+    width: 20%;
+    text-align: center;
 }
 </style>
