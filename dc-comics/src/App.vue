@@ -33,4 +33,10 @@ export default {
 .margin-section {
   margin: 0 auto;
 }
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 </style>

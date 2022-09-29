@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="footer-container">
         <footerLinks />
         <footerSocials />
     </div>
@@ -19,5 +19,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+#footer-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
 </style>
