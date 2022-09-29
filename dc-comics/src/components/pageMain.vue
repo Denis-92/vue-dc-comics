@@ -43,9 +43,6 @@ export default {
     props: {
         cards: Array,
     },
-    mounted() {
-        console.log(this.cards);
-    },
     components: {
         mainCards,
     },

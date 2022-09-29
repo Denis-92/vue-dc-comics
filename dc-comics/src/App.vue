@@ -15,7 +15,6 @@
 import pageHeaderVue from './components/pageHeader.vue';
 import pageMainVue from './components/pageMain.vue';
 import pageFooterVue from './components/pageFooter.vue';
-// import { comics } from '@/assets/data/dc-comics.js'
 import comics from '@/assets/data/dc-comics.json'
 
 export default {
